@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GpsjT</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <link rel="shortcut icon" href="gps 1.png">
+</head>
+<body>
+    <header>
+        <div class="usuario">
+            <img src="imagenes/usuario.png" alt="usuario">
+        </div>
+    </header>
+  
+    <section class="formulario">
+        <form id="registroForm">
+            <input type="text" name="usuario" placeholder="Usuario">
+            <br> 
+            <input type="password" name="contrasena" placeholder="Contraseña">
+            <br> 
+            <input type="submit" class="btn-1" value="Enviar">
+        </form>
+    </section>
+
+    <main class="contraseña">
+        <a href="pagina.html">Iniciar sesión</a>
+        <br>
+        <a href="olvidate.html">¿Olvidaste tu contraseña?</a>
+        <a href="registro.html">Reguistrarse</a>
+
+    </main>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de manera predeterminada
+
+            var formData = new FormData(this);
+
+            fetch('/registro', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Usuario registrado correctamente.');
+                } else {
+                    alert('Error al registrar usuario.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

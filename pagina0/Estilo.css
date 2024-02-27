@@ -1,0 +1,31 @@
+body {
+  background-image: url('imagenes/gps\ 1.png'); /* Cambia 'ruta/a/la/imagen.jpg' por la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.usuario img {
+  display: block;
+  margin: 0 auto;
+  width: 25px; 
+  height: auto; /* Altura automática para mantener la proporción */
+}
+
+.formulario {
+  text-align: center;
+  margin-top: 20px; 
+}
+
+.contraseña, nav {
+  text-align: center;
+  margin-top: 20px; 
+}
+
+form {
+  margin-bottom: 20px; 
+}

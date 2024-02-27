@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Registro de Usuario</h1>
+    </header>
+  
+    <section class="formulario">
+        <form id="registroForm">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+            <label for="cedula">Número de cédula:</label>
+            <input type="text" id="cedula" name="cedula" required>
+            <br>
+            <label for="telefono">Teléfono celular:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <br>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+            <br>
+            <label for="confirmar_contrasena">Confirmar contraseña:</label>
+            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+            <br>
+            <input type="submit" class="btn-1" value="Registrarse">
+        </form>
+    </section>
+
+    <footer>
+        <p>¿Ya tienes una cuenta? <a href="inicio.html">Inicia sesión</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de manera predeterminada
+
+            var formData = new FormData(this);
+
+            fetch('/registro', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Usuario registrado correctamente.');
+                    window.location.href = 'inicio.html'; // Redirige a la página de inicio de sesión
+                } else {
+                    alert('Error al registrar usuario.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
