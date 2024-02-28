@@ -1,5 +1,6 @@
-body {
-  background-image: url('imagenes/gps\ 1.png'); /* Cambia 'ruta/a/la/imagen.jpg' por la ruta de tu imagen */
+.cero-html 
+  {
+  background-image: url('imagenes/gps\ 1.png');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -8,7 +9,17 @@ body {
   height: 100vh;
   margin: 0;
 }
-
+.primer-html {
+  background-image: url('imagenes/maps.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+   }
+/* El resto de tus estilos permanecen igual */
 .usuario img {
   display: block;
   margin: 0 auto;
@@ -28,4 +39,13 @@ body {
 
 form {
   margin-bottom: 20px; 
+}
+img{
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin: 0;
 }
